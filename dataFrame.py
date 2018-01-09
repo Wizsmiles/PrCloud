@@ -11,22 +11,11 @@ conf = SparkConf().setMaster('local').setAppName('codigo')
 sc = SparkContext(conf = conf)
 sqlContext = SQLContext(sc)
 
-def loadData(file):
-    dataText = sc.textFile(file)
-    return dataText.flatMap(lambda l: l.split("\n")).map(lambda l: Row(idEstacion=l[0:8],idParametro=l[8:10], idTecnica=l[10:12], anyo=l[14:16], mes=l[16:18],dia1=l[18:24], dia2=l[24:30], dia3=l[30:36], dia4=l[36:42], dia5=l[42:48],dia6=l[48:54], dia7=l[54:60], dia8=l[60:66], dia9=l[66:72], dia10=l[72:78],dia11=l[78:84], dia12=l[84:90], dia13=l[90:96], dia14=l[96:102], dia15=l[102:108],dia16=l[108:114], dia17=l[114:120], dia18=l[120:126], dia19=l[126:132], dia20=l[132:138],dia21=l[138:144], dia22=l[144:150], dia23=l[150:156], dia24=l[156:162], dia25=l[162:168],dia26=l[168:174], dia27=l[174:180], dia28=l[180:186], dia29=l[186:192], dia30=l[192:198],dia31=l[198:204]))
+def loadData(myFile):
+    data = myFile.flatMap(lambda l: l.split("\n")).map(lambda l: Row(idEstacion=l[0:8],idParametro=l[8:10], idTecnica=l[10:12], anyo=l[14:16], mes=l[16:18],dia1=l[18:24], dia2=l[24:30], dia3=l[30:36], dia4=l[36:42], dia5=l[42:48],dia6=l[48:54], dia7=l[54:60], dia8=l[60:66], dia9=l[66:72], dia10=l[72:78],dia11=l[78:84], dia12=l[84:90], dia13=l[90:96], dia14=l[96:102], dia15=l[102:108],dia16=l[108:114], dia17=l[114:120], dia18=l[120:126], dia19=l[126:132], dia20=l[132:138],dia21=l[138:144], dia22=l[144:150], dia23=l[150:156], dia24=l[156:162], dia25=l[162:168],dia26=l[168:174], dia27=l[174:180], dia28=l[180:186], dia29=l[186:192], dia30=l[192:198],dia31=l[198:204]))
+    return data
 
-RDDs = []
-Data = []
 Schema = []
-
-for i in range(year):
-    aux = ""
-    aux2 = i+1
-    if aux2 < 10:
-        aux = "0" + str(aux2)
-    else:
-        aux = str(aux2)
-    RDDs.append(sc.textFile("datos"+aux+".txt"))
 
 # Carga de ficheros
 '''
@@ -50,8 +39,6 @@ RDDDatos17 = sc.textFile("datos17.txt")
 '''
 # 1. Mapeo de datos y crear dataFrame
 
-for j in range(year):
-    Data.append(loadData(RDDs[j]))
 
 '''
 datos01 = loadData(RDDDatos01)
@@ -73,8 +60,14 @@ datos16 = loadData(RDDDatos16)
 datos17 = loadData(RDDDatos17)
 '''
 
-for k in range(year):
-    Schema.append(sqlContext.createDataFrame(Data[z]))
+for i in range(year):
+    aux = ""
+    aux2 = i+1
+    if aux2 < 10:
+        aux = "0" + str(aux2)
+    else:
+        aux = str(aux2)
+    Schema.append(sqlContext.createDataFrame(loadData(sc.textFile("datos"+aux+".txt"))))
 
 '''
 datos01_schema = sqlContext.createDataFrame(datos01)
@@ -96,7 +89,8 @@ datos16_schema = sqlContext.createDataFrame(datos16)
 datos17_schema = sqlContext.createDataFrame(datos17)
 '''
 
-schema_final
+schema_final = None
+
 for l in range(year):
     if l == 0:
         schema_final = Schema[l]
