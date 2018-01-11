@@ -28,73 +28,13 @@ for i in range(year):
         aux = str(aux2)
     RDDs.append(sc.textFile("datos"+aux+".txt"))
 
-# Carga de ficheros
-'''
-RDDDatos01 = sc.textFile("datos01.txt")
-RDDDatos02 = sc.textFile("datos02.txt")
-RDDDatos03 = sc.textFile("datos03.txt")
-RDDDatos04 = sc.textFile("datos04.txt")
-RDDDatos05 = sc.textFile("datos05.txt")
-RDDDatos06 = sc.textFile("datos06.txt")
-RDDDatos07 = sc.textFile("datos07.txt")
-RDDDatos08 = sc.textFile("datos08.txt")
-RDDDatos09 = sc.textFile("datos09.txt")
-RDDDatos10 = sc.textFile("datos10.txt")
-RDDDatos11 = sc.textFile("datos11.txt")
-RDDDatos12 = sc.textFile("datos12.txt")
-RDDDatos13 = sc.textFile("datos13.txt")
-RDDDatos14 = sc.textFile("datos14.txt")
-RDDDatos15 = sc.textFile("datos15.txt")
-RDDDatos16 = sc.textFile("datos16.txt")
-RDDDatos17 = sc.textFile("datos17.txt")
-'''
 # 1. Mapeo de datos y crear dataFrame
 
 for j in range(year):
     Data.append(loadData(RDDs[j]))
 
-'''
-datos01 = loadData(RDDDatos01)
-datos02 = loadData(RDDDatos02)
-datos03 = loadData(RDDDatos03)
-datos04 = loadData(RDDDatos04)
-datos05 = loadData(RDDDatos05)
-datos06 = loadData(RDDDatos06)
-datos07 = loadData(RDDDatos07)
-datos08 = loadData(RDDDatos08)
-datos09 = loadData(RDDDatos09)
-datos10 = loadData(RDDDatos10)
-datos11 = loadData(RDDDatos11)
-datos12 = loadData(RDDDatos12)
-datos13 = loadData(RDDDatos13)
-datos14 = loadData(RDDDatos14)
-datos15 = loadData(RDDDatos15)
-datos16 = loadData(RDDDatos16)
-datos17 = loadData(RDDDatos17)
-'''
-
 for k in range(year):
     Schema.append(sqlContext.createDataFrame(Data[z]))
-
-'''
-datos01_schema = sqlContext.createDataFrame(datos01)
-datos02_schema = sqlContext.createDataFrame(datos02)
-datos03_schema = sqlContext.createDataFrame(datos03)
-datos04_schema = sqlContext.createDataFrame(datos04)
-datos05_schema = sqlContext.createDataFrame(datos05)
-datos06_schema = sqlContext.createDataFrame(datos06)
-datos07_schema = sqlContext.createDataFrame(datos07)
-datos08_schema = sqlContext.createDataFrame(datos08)
-datos09_schema = sqlContext.createDataFrame(datos09)
-datos10_schema = sqlContext.createDataFrame(datos10)
-datos11_schema = sqlContext.createDataFrame(datos11)
-datos12_schema = sqlContext.createDataFrame(datos12)
-datos13_schema = sqlContext.createDataFrame(datos13)
-datos14_schema = sqlContext.createDataFrame(datos14)
-datos15_schema = sqlContext.createDataFrame(datos15)
-datos16_schema = sqlContext.createDataFrame(datos16)
-datos17_schema = sqlContext.createDataFrame(datos17)
-'''
 
 schema_final
 for l in range(year):
