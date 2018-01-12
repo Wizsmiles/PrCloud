@@ -3,9 +3,10 @@ from pyspark.sql.types import*
 from pyspark.sql import*
 from pyspark.sql import Row
 import string
+import sys
 
-# Cambiar con el anyo
-year = 17
+# Carga el numero de anyos
+year = int(sys.argv[1])
 
 # 0. Configuracion inicial
 conf = SparkConf().setMaster('local').setAppName('codigo')
@@ -17,9 +18,7 @@ def loadData(myFile):
     return data
 
 # 1. Cargo cada dataFrame asociado a un anyo
-
 Schema = []
-Schema_Average = []
 for i in range(year):
     aux = ""
     aux2 = i+1
@@ -27,25 +26,11 @@ for i in range(year):
         aux = "0" + str(aux2)
     else:
         aux = str(aux2)
-<<<<<<< HEAD
-    RDDs.append(sc.textFile("datos"+aux+".txt"))
-
-# 1. Mapeo de datos y crear dataFrame
-
-for j in range(year):
-    Data.append(loadData(RDDs[j]))
-
-for k in range(year):
-    Schema.append(sqlContext.createDataFrame(Data[z]))
-
-schema_final
-=======
     Schema.append(sqlContext.createDataFrame(loadData(sc.textFile("datos"+aux+".txt"))))
 
 # 2. Realizo la union de todos los dataFrames para obtener uno global
 schema_final = None
 
->>>>>>> origin/master
 for l in range(year):
     if l == 0:
         schema_final = Schema[l]
@@ -53,5 +38,9 @@ for l in range(year):
         schema_aux = Schema[l]
         schema_final = schema_final.union(schema_aux)
 
+schema_final.registerTempTable("tabla")
+query = "SELECT idEstacion,idParametro,idTecnica,anyo,mes,dia1,dia2,dia3,dia4,dia5,dia6,dia7,dia8,dia9,dia10,dia11,dia12,dia13,dia14,dia15,dia16,dia17,dia18,dia19,dia20,dia21,dia22,dia23,dia24,dia25,dia26,dia27,dia28,dia29,dia30,dia31 FROM tabla"
+table = sqlContext.sql(str(query))
+
 # 3. Guardo tabla para ver que tira
-schema_final.write.csv('tabla_final')
+table.orderBy("anyo").write.csv('tabla_final')
