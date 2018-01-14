@@ -10,10 +10,6 @@ En este proyecto se trata de analizar y predecir la calidad del aire en Madrid, 
 
 Nuestro objetivo es:
 
-1. Numbered
-2. List
-3. Prueba
-
 1. Tratar el DataSet obtenido para su futuro procesado.
 2. Procesar los datos mediante técnicas de Big Data.
 3. Generar gráficas en función de distintos parámetros, para poder analizar la calidad del aire en madrid.
@@ -32,5 +28,4 @@ Nuestro objetivo es:
 ## Mejoras posibles para la aplicación
 
 ## Conclusiones del desarrollo de la aplicación
-
 
