@@ -55,10 +55,6 @@ schema_avg_final.registerTempTable("tabla2")
 query = "SELECT idEstacion,idParametro,idTecnica,anyo,mes,avg FROM tabla2"
 table2 = sqlContext.sql(str(query))
 
-query = "SELECT idEstacion, idParametro, idTecnica, anyo, AVG(avg) as avg FROM tabla2 GROUP BY idEstacion, idParametro, idTecnica, anyo"
-table3 = sqlContext.sql(str(query))
-
 # 3. Guardo tabla para ver que tira
 table.orderBy("anyo").write.csv('tabla_final')
 table2.orderBy("anyo").write.csv('tabla_avg')
-table3.orderBy("idParametro").orderBy("idTecnica").orderBy("anyo").write.csv('tabla_avg_anyo')
