@@ -13,7 +13,6 @@ Nuestro objetivo es:
 1. Tratar el DataSet obtenido para su futuro procesado.
 2. Procesar los datos mediante técnicas de Big Data.
 3. Generar gráficas en función de distintos parámetros, para poder analizar la calidad del aire en madrid.
-4. Aplicar un modelo predictivo a los datos procesados.
 
 ## DataSet en profundidad
 
