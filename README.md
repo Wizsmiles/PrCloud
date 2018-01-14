@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+# Análisis de la calidad del aire en Madrid - Cloud y Big Data
 
-You can use the [editor on GitHub](https://github.com/Wizsmiles/PrCloud/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+![tierra](http://www.designerspics.com/wp-content/uploads/2014/05/globe_america_large_free_photo.jpg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+En esta página se aloja una práctica realizada para la asignatura Cloud y Big Data (CLO) de la Universidad Complutense. 
 
-### Markdown
+## Propósito del proyecto
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+En este proyecto se trata de analizar y predecir la calidad del aire en Madrid, partiendo de los datos facilitados por la comunidad de Madrid en su página [http://datos.madrid.es]. El DataSet a analizar contiene información sobre el aire (actualizada diariamente desde 2001 hasta la actualidad), generada por estaciones que están situadas en distintos puntos de Madrid.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
+Nuestro objetivo es:
 
 1. Numbered
 2. List
+3. Prueba
 
-**Bold** and _Italic_ and `Code` text
+1. Tratar el DataSet obtenido para su futuro procesado.
+2. Procesar los datos mediante técnicas de Big Data.
+3. Generar gráficas en función de distintos parámetros, para poder analizar la calidad del aire en madrid.
+4. Aplicar un modelo predictivo a los datos procesados.
 
-[Link](url) and ![Image](src)
-```
+## DataSet en profundidad
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Descripción de la estructura de la aplicación
 
-### Jekyll Themes
+## Como usar la aplicación
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Wizsmiles/PrCloud/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Rendimiento de la aplicación
 
-### Support or Contact
+## Datos interesantes aprendidos en el desarrollo de la aplicación
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Mejoras posibles para la aplicación
+
+## Conclusiones del desarrollo de la aplicación
+
+
