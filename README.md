@@ -78,17 +78,40 @@ El formato es el siguiente:
 * En caso de que se quiera realizar el proceso desde cero:
 
 1. Descargar DataSet y crear cluster Spark en amazon AWS.
-2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. Ejemplo:
+2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. El proceso se repite tantas veces como años se quieran procesar. Ejemplo (XX se sustituye por el año a procesar):
 
 ```
  python QuitaCeros.py datosXX.txt.
 ```
 
-3. Cargar el número de años a estudiar en Spark:
+3. Cargar el número de años a estudiar en Spark (XX se sustituye por el año a procesar). El proceso se repite tantas veces como años se quiera cargar:
 
 ```
- hadoop fs -put
+ hadoop fs -put datosXX.txt
 ```
+
+4. Crear el dataframe (X se sustituye por el número de años a procesar):
+
+```
+spark-submit dataFrame.py X
+```
+
+5. Generar los archivos TablaFinal, TablaAVG y TablaAVGAnyo:
+
+```
+hadoop fs -get tabla_final
+hadoop fs -get tabla_avg
+hadoop fs -get tabla_avg_anyo
+```
+
+Genera carpetas con los archivos que componen las tablas fragmentados.
+
+```
+cat tabla_final/* > TablaFinal
+cat tabla_avg/* > TablaAVG
+cat tabla_avg_anyo > TablaAVGAnyo
+```
+**Es importante que los ficheros finales se tengan el nombre indicado, ya que es el que reconocen los posteriores scripts.**
 
 * En caso de seguir la recomendación:
 
