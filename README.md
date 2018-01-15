@@ -142,6 +142,27 @@ python GraficaEstacion.py 28079056 6 m 17 bar
 python GraficaEstacion.py 28079056 6 a plot
 ```
 
+2.2. Generar gráficas comparativas:
+
+El script usado es **Comparador.py**
+
+```
+python Comparador.py idEstacion1 idEstacion2 idParametro intervalo (año)
+```
+
+- idEstacion1: id de la primera estación a comparar.
+- idEstacion2: id de la segunda estación a comparar.
+- idParametro: id que representa el gas medido.
+- intervalo: "m" para los meses de un año dado. "a" para mostrar todos los años desde 2001 hasta la actualidad.
+- año (opcional): en caso de haber elegido "m" en el anterior argumento, se debe especificar el año a medir.
+
+**Ejemplo: **
+
+```
+python Comparador.py 28079056 28079056 6 a 
+```
+
+**Importante: Si en el intervalo seleccionado no hay datos, las gráficas saldrán vacías.**
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
