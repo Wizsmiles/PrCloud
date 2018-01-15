@@ -81,12 +81,14 @@ El formato es el siguiente:
 2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. Ejemplo:
 
 ```
- *python QuitaCeros.py nombreArchivo.txt.
+ python QuitaCeros.py datosXX.txt.
 ```
 
 3. Cargar el número de años a estudiar en Spark:
 
- *hadoop fs -put
+```
+ hadoop fs -put
+```
 
 * En caso de seguir la recomendación:
 
