@@ -30,11 +30,29 @@ El formato es el siguiente:
 - Mes: Mes de la medición.
 - Día 1 - Día 31: Datos obtenidos cada día. Todos los meses son considerados con 31 días.
 
+## Descripción y uso de la aplicación
+
+**Descripción:**
+
+1. La aplicación hace uso de un cluster Spark alojado en amazon AWS para recopilar los DataSet previamente explicados, y crear un DataFrame global. 
+
+2.El DataFrame se desglosa en tres archivos principales: 
+  *TablaFinal: Es la unión de todos los DataSet en una única tabla procesada con los datos de interés.
+  *TablaAVG: Es la tabla que contiene la media de cada mes de los distintos valores.
+  *TablaAVGAnyo: Contiene la media anual de los distintos valores.
+
+3. Hay 3 scripts adicionales, cuyas funciones son: 
+  *GraficaEstacion.py (Ejecución en local): A través de las directrices introducidas por el usuario, genera una gráfica acorde para una estación, un gas, un periodo de tiempo, y un formato dados.
+  *Comparador.py (Ejecución en local): Compara las gráficas de dos estaciones introducidas por el usuario.
+  *InfoEstacion.py (Ejecución en amazon AWS con Spark): Obtiene los tipos de gases medidos por una estación a lo largo del tiempo.  
+
+**Interpretación de las gráficas:**
+
+*Gráfica mensual:
+
+![GraficaMensual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaMensual.png)
 
 
-## Descripción de la estructura de la aplicación
-
-## Como usar la aplicación
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
