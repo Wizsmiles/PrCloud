@@ -32,7 +32,7 @@ El formato es el siguiente:
 
 ## Descripción y uso de la aplicación
 
-**Descripción:**
+###Descripción:
 
 1. La aplicación hace uso de un cluster Spark alojado en amazon AWS para recopilar los DataSet previamente explicados, y crear un DataFrame global. 
 
@@ -46,7 +46,7 @@ El formato es el siguiente:
   *Comparador.py (Ejecución en local): Compara las gráficas de dos estaciones introducidas por el usuario.
   *InfoEstacion.py (Ejecución en amazon AWS con Spark): Obtiene los tipos de gases medidos por una estación a lo largo del tiempo.  
 
-**Interpretación de las gráficas:**
+###Interpretación de las gráficas:
 
 * Gráfica mensual:
 
@@ -71,7 +71,7 @@ El formato es el siguiente:
 - Color1: datos para la estación 1.
 - Color2: datos para la estación 2.
 
-**Uso de la aplicación:**
+###Uso de la aplicación:
 
 **Recomendación:** Para usar la aplicación, lo más recomendable es descargar el repositorio con los datos ya formateados. 
 
