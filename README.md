@@ -44,7 +44,7 @@ El formato es el siguiente:
 3. Hay 3 scripts adicionales, cuyas funciones son: 
   *GraficaEstacion.py (Ejecución en local): A través de las directrices introducidas por el usuario, genera una gráfica acorde para una estación, un gas, un periodo de tiempo, y un formato dados.
   *Comparador.py (Ejecución en local): Compara las gráficas de dos estaciones introducidas por el usuario.
-  *InfoEstacion.py (Ejecución en amazon AWS con Spark): Obtiene los tipos de gases medidos por una estación a lo largo del tiempo.  
+  *infoEstacion.py (Ejecución en amazon AWS con Spark): Obtiene los tipos de gases medidos por una estación a lo largo del tiempo.  
 
 ### Interpretación de las gráficas:
 
@@ -142,6 +142,8 @@ python GraficaEstacion.py 28079056 6 m 17 bar
 python GraficaEstacion.py 28079056 6 a plot
 ```
 
+**Importante: Si en el intervalo seleccionado no hay datos, las gráficas saldrán vacías.**
+
 2.2. Generar gráficas comparativas:
 
 El script usado es **Comparador.py**
@@ -163,6 +165,23 @@ python Comparador.py 28079056 28079056 6 a
 ```
 
 **Importante: Si en el intervalo seleccionado no hay datos, las gráficas saldrán vacías.**
+
+2.3. (Opcional) Consultar gases disponibles para una estación:
+
+El script usado es **infoEstacion.py**. Es necesario usarlo en un cluster Spark de amazon AWS y haber cargado TablaAVG (punto 1.5.)
+
+```
+spark-submit infoEstacion.py idEstacion
+```
+- idEstacion: id de la estación de la que se quieren consultar los gases.
+
+Genera un archivo llamado idEstacion_parametros, en el que se detallan los gases medidos por periodo.
+
+**Ejemplo:**
+
+```
+spark-submit infoEstacion.py 28079056
+```
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
