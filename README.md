@@ -48,7 +48,7 @@ El formato es el siguiente:
 
 **Interpretación de las gráficas:**
 
-*Gráfica mensual:
+* Gráfica mensual:
 
 ![GraficaMensual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaMensual.png)
 
