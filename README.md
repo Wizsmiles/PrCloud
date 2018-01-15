@@ -36,7 +36,7 @@ El formato es el siguiente:
 
 1. La aplicación hace uso de un cluster Spark alojado en amazon AWS para recopilar los DataSet previamente explicados, y crear un DataFrame global. 
 
-2.El DataFrame se desglosa en tres archivos principales: 
+2. El DataFrame se desglosa en tres archivos principales: 
   *TablaFinal: Es la unión de todos los DataSet en una única tabla procesada con los datos de interés.
   *TablaAVG: Es la tabla que contiene la media de cada mes de los distintos valores.
   *TablaAVGAnyo: Contiene la media anual de los distintos valores.
@@ -52,7 +52,9 @@ El formato es el siguiente:
 
 ![GraficaMensual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaMensual.png)
 
+* Gráfica anual:
 
+![GraficaAnual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaAnual.png)
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
