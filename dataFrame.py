@@ -51,16 +51,9 @@ schema_final.registerTempTable("tabla")
 query = "SELECT idEstacion,idParametro,idTecnica,anyo,mes,dia1,dia2,dia3,dia4,dia5,dia6,dia7,dia8,dia9,dia10,dia11,dia12,dia13,dia14,dia15,dia16,dia17,dia18,dia19,dia20,dia21,dia22,dia23,dia24,dia25,dia26,dia27,dia28,dia29,dia30,dia31 FROM tabla"
 table = sqlContext.sql(str(query))
 
-#Transformamos todas las medidas a 10^-6 gr
-query_medida = "UPDATE tabla SET dia1=dia1*1000, dia2=dia2*1000, dia3=dia3*1000, dia4=dia4*1000, dia5=dia5*1000, dia6=dia6*1000, dia7=dia7*1000, dia8=dia8*1000, dia9=dia9*1000, dia10=dia10*1000, dia11=dia11*1000, dia12=dia12*1000, dia13=dia13*1000, dia14=dia14*1000, dia15=dia15*1000, dia16=dia16*1000, dia17=dia17*1000, dia18=dia18*1000, dia19=dia19*1000, dia20=dia20*1000, dia21=dia21*1000, dia22=dia22*1000, dia23=dia23*1000, dia24=dia24*1000, dia25=dia25*1000, dia26=dia26*1000, dia27=dia27*1000, dia28=dia28...(line truncated)...
-table = sqlContext.sql(str(query_medida))
-
 schema_avg_final.registerTempTable("tabla2")
 query = "SELECT idEstacion,idParametro,idTecnica,anyo,mes,avg FROM tabla2"
 table2 = sqlContext.sql(str(query))
-#Transformamos todas las medidas a 10^-6 gr
-query_medida = "UPDATE tabla2 SET avg = avg*1000 WHERE idParametro IN (6,42,43,44)"
-table2 = sqlContext.sql(str(query_medida))
 
 query = "SELECT idEstacion, idParametro, idTecnica, anyo, AVG(avg) as avg FROM tabla2 GROUP BY idEstacion, idParametro, idTecnica, anyo"
 table3 = sqlContext.sql(str(query))
