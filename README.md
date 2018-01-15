@@ -185,7 +185,27 @@ spark-submit infoEstacion.py 28079056
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
+- Procesado de archivos de gran tamaño (Big Data).
+- Uso de Spark y pyspark.
+- Manejo de las librerías pandas, numpy y matplotlib.
+- Uso del framework Jupyter.
+
 ## Mejoras posibles para la aplicación
 
+- Cliente gráfico para el manejo de la aplicación.
+- Ejecución en un cluster en amazon AWS, para mejor rendimiento.
+- Listado de estaciones por nombre.
+- Gráfica por días.
+- Análisis de los datos para crear modelo predictivo.
+
 ## Conclusiones del desarrollo de la aplicación
+
+La parte más emocionante y divertida del proyecto, ha sido realizar los scripts que generan las distintas gráficas, ya que proporciona de forma visual y atractiva los resultados del trabajo llevado a cabo.
+
+Por otra parte han surgido problemas con la guía oficial de AWS a la hora de conectar Jupyter notebook con cluster de spark y su bucket de almacenamiento. También se han encontrado problemas para usar el notebook de Zeppelin (incluido en cluster Spark) al tratar de acceder a archivos externos para realizar operaciones con ellos. 
+
+Para finalizar, animar a cualquier persona que quiera contribuir a enviarnos sugerencias o pedir la invitación para poder continuar con el proyecto.
+
+
+
 
