@@ -52,24 +52,24 @@ El formato es el siguiente:
 
 ![GraficaMensual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaMensual.png)
 
-Eje Y: valores del gas.
-Eje X: meses.
+- Eje Y: valores del gas.
+- Eje X: meses.
 
 * Gráfica anual:
 
 ![GraficaAnual](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/GraficaAnual.png)
 
-Eje Y: valores del gas.
-Eje X: años.
+- Eje Y: valores del gas.
+- Eje X: años.
 
 * Comparativa gráficas:
 
 ![ComparativaGraficas](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/comparativa.png)
 
-Eje Y: valores del gas. 
-Eje X: meses o años. 
-Color1: datos para la estación 1.
-Color2: datos para la estación 2.
+- Eje Y: valores del gas. 
+- Eje X: meses o años. 
+- Color1: datos para la estación 1.
+- Color2: datos para la estación 2.
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
