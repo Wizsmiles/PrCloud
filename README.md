@@ -75,28 +75,28 @@ El formato es el siguiente:
 
 **Recomendación:** Para usar la aplicación, lo más recomendable es descargar el repositorio con los datos ya formateados. 
 
-* En caso de que se quiera realizar el proceso desde cero:
+1. En caso de que se quiera realizar el proceso desde cero:
 
-1. Descargar DataSet y crear cluster Spark en amazon AWS.
-2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. El proceso se repite tantas veces como años se quieran procesar. Ejemplo (XX se sustituye por el año a procesar):
+1.1. Descargar DataSet y crear cluster Spark en amazon AWS.
+1.2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. El proceso se repite tantas veces como años se quieran procesar. Ejemplo (XX se sustituye por el año a procesar):
 
 ```
  python QuitaCeros.py datosXX.txt.
 ```
 
-3. Cargar el número de años a estudiar en Spark (XX se sustituye por el año a procesar). El proceso se repite tantas veces como años se quiera cargar:
+1.3. Cargar el número de años a estudiar en Spark (XX se sustituye por el año a procesar). El proceso se repite tantas veces como años se quiera cargar:
 
 ```
  hadoop fs -put datosXX.txt
 ```
 
-4. Crear el dataframe (X se sustituye por el número de años a procesar):
+1.4. Crear el dataframe (X se sustituye por el número de años a procesar):
 
 ```
 spark-submit dataFrame.py X
 ```
 
-5. Generar los archivos TablaFinal, TablaAVG y TablaAVGAnyo:
+1.5. Generar los archivos TablaFinal, TablaAVG y TablaAVGAnyo:
 
 ```
 hadoop fs -get tabla_final
@@ -113,7 +113,23 @@ cat tabla_avg_anyo > TablaAVGAnyo
 ```
 **Es importante que los ficheros finales se tengan el nombre indicado, ya que es el que reconocen los posteriores scripts.**
 
-* En caso de seguir la recomendación:
+
+2. En caso de seguir la recomendación o haber realizado el punto 1 completo:
+
+2.1. Generar gráficas de una única estación:
+
+El script usado es **GraficaEstacion.py**.
+
+```
+python GraficaEstacion.py idEstacion idParámetro intervalo (año) tipoGrafica
+```
+
+- idEstacion: id de la estación de la que se quieren obtener los datos.
+- idParámetro: id que representa el gas medido.
+- intervalo: "m" para los meses de un año dado. "a" para mostrar todos los años desde 2001 hasta la actualidad.
+- año (opcional): en caso de haber elegido "m" en el anterior argumento, se debe especificar el año a medir.
+- tipoGrafica (opcional): "plot" gráfica de puntos unida por líneas (predeterminada), "bar" gráfica de barras. 
+
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
