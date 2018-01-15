@@ -130,6 +130,18 @@ python GraficaEstacion.py idEstacion idParámetro intervalo (año) tipoGrafica
 - año (opcional): en caso de haber elegido "m" en el anterior argumento, se debe especificar el año a medir.
 - tipoGrafica (opcional): "plot" gráfica de puntos unida por líneas (predeterminada), "bar" gráfica de barras. 
 
+**Ejemplo mensual:**
+
+```
+python GraficaEstacion.py 28079056 6 m 17 bar
+```
+
+**Ejemplo anual:**
+
+```
+python GraficaEstacion.py 28079056 6 a plot
+```
+
 
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
