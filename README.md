@@ -71,6 +71,25 @@ El formato es el siguiente:
 - Color1: datos para la estación 1.
 - Color2: datos para la estación 2.
 
+**Uso de la aplicación:**
+
+**Recomendación:** Para usar la aplicación, lo más recomendable es descargar el repositorio con los datos ya formateados. 
+
+* En caso de que se quiera realizar el proceso desde cero:
+
+1. Descargar DataSet y crear cluster Spark en amazon AWS.
+2. Usar los scripts auxiliares QuitaCeros.py y QuitaCaracteres.py. Ejemplo:
+
+```
+ *python QuitaCeros.py nombreArchivo.txt.
+```
+
+3. Cargar el número de años a estudiar en Spark:
+
+ *hadoop fs -put
+
+* En caso de seguir la recomendación:
+
 ## Datos interesantes aprendidos en el desarrollo de la aplicación
 
 ## Mejoras posibles para la aplicación
