@@ -20,7 +20,7 @@ El DataSet que se ha utilizado, es facilitado por la [comunidad de Madrid](http:
 
 El formato es el siguiente:
 
-![DataSet1](https://github.com/Wizsmiles/PrCloud/blob/master/resources/dataSet1.PNG)
+![DataSet1](https://raw.githubusercontent.com/Wizsmiles/PrCloud/master/resources/dataSet1.PNG)
 
 - Estación: máquina física que toma las medidas.
 - Magnitud: tipo de gas.
