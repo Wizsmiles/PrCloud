@@ -109,7 +109,7 @@ Genera carpetas con los archivos que componen las tablas fragmentados.
 ```
 cat tabla_final/* > TablaFinal
 cat tabla_avg/* > TablaAVG
-cat tabla_avg_anyo > TablaAVGAnyo
+cat tabla_avg_anyo/* > TablaAVGAnyo
 ```
 **Es importante que los ficheros finales se tengan el nombre indicado, ya que es el que reconocen los posteriores scripts.**
 
