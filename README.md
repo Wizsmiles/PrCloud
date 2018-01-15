@@ -158,7 +158,7 @@ python Comparador.py idEstacion1 idEstacion2 idParametro intervalo (año)
 - intervalo: "m" para los meses de un año dado. "a" para mostrar todos los años desde 2001 hasta la actualidad.
 - año (opcional): en caso de haber elegido "m" en el anterior argumento, se debe especificar el año a medir.
 
-**Ejemplo: **
+**Ejemplo:**
 
 ```
 python Comparador.py 28079056 28079056 6 a 
