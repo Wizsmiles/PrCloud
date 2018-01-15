@@ -1,6 +1,6 @@
 # Análisis de la calidad del aire en Madrid - Cloud y Big Data
 
-![tierra](http://www.designerspics.com/wp-content/uploads/2014/05/globe_america_large_free_photo.jpg)
+![madridContaminado](https://www.republica.com/wp-content/uploads/2014/11/Contaminacin_Madrid.jpg)
 
 En esta página se aloja una práctica realizada para la asignatura Cloud y Big Data (CLO) de la Universidad Complutense. 
 
